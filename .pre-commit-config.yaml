@@ -3,7 +3,7 @@ default_stages: [commit]
 exclude: vale/styles/*
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.3.0
+    rev: v4.0.1
     hooks:
       - id: check-yaml
       - id: end-of-file-fixer
@@ -16,14 +16,14 @@ repos:
         args: [--maxkb=10240]
 
   - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
-    rev: v4.0.0
+    rev: v5.0.0
     hooks:
       - id: commitlint
         stages: [commit-msg]
         additional_dependencies: ["@commitlint/config-conventional"]
 
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v2.2.1
+    rev: v2.4.1
     hooks:
       - id: prettier
         name: Prettier
@@ -36,23 +36,22 @@ repos:
         entry: jdkato/vale:latest
 
   - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: v7.8.1
+    rev: v8.2.0
     hooks:
       - id: eslint
         name: ESLint
         files: \.[jt]sx?$ # *.js, *.jsx, *.ts and *.tsx
         types: [file]
         additional_dependencies:
-          - jest@26.4.2
-          - eslint@7.7.0
-          - typescript@4.0.2
-          - eslint-config-prettier@6.11.0
-          - eslint-config-standard@14.1.1
-          - eslint-plugin-import@2.22.0
-          - eslint-plugin-jest@23.20.0
+          - jest@27.0.2
+          - eslint@8.1.0
+          - typescript@4.4.4
+          - eslint-config-prettier@8.3.0
+          - eslint-config-standard@16.0.3
+          - eslint-plugin-import@2.25.2
+          - eslint-plugin-jest@25.2.2
           - eslint-plugin-node@11.1.0
-          - eslint-plugin-promise@4.2.1
-          - eslint-plugin-standard@4.0.1
-          - eslint-plugin-tsdoc@0.2.7
-          - "@typescript-eslint/eslint-plugin@3.10.1"
-          - "@typescript-eslint/parser@3.10.1"
+          - eslint-plugin-promise@5.1.1
+          - eslint-plugin-tsdoc@0.2.14
+          - "@typescript-eslint/eslint-plugin@5.2.0"
+          - "@typescript-eslint/parser@5.2.0"
