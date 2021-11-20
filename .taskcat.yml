@@ -1,0 +1,14 @@
+---
+project:
+  name: aws-smtp-server
+  regions:
+    - ca-central-1
+  s3_bucket: brokentech-cfn
+
+tests:
+  default:
+    template: ./cdk.out/AwsSesIamRoleStack.template.json
+    parameters:
+      sourceEmailAddress: test
+      opsgenieEmailLocalPart: test
+      opsgenieIntegrationName: test@example.com
