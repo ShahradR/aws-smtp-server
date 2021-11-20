@@ -1,0 +1,33 @@
+name: Deploy to AWS
+
+on: [release, workflow_dispatch]
+
+jobs:
+  deploy:
+    name: Deploy to development
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    environment: development
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ca-central-1
+
+      - uses: actions/setup-node@v2.1.4
+        with:
+          node-version: 12
+      - run: npm install
+      - run: npm install -g aws-cdk
+      - run: >-
+          cdk deploy
+          --require-approval never
+          --parameters sourceEmailAddress=${{ secrets.SOURCE_EMAIL_ADDRESS }}
+          --parameters opsgenieEmailLocalPart=${{ secrets.OPSGENIE_LOCAL_PART }}
+          --parameters opsgenieIntegrationName=${{ secrets.OPSGENIE_INTEGRATION_NAME }}
