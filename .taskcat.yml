@@ -9,6 +9,6 @@ tests:
   default:
     template: ./cdk.out/AwsSesIamRoleStack.template.json
     parameters:
-      sourceEmailAddress: test
-      opsgenieEmailLocalPart: test
-      opsgenieIntegrationName: test@example.com
+      sourceEmailAddress: test@example.com
+      opsgenieIntegrationEmailLocalPart: test-system
+      opsgenieCustomerName: example-customer

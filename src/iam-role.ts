@@ -17,7 +17,7 @@ export class AwsSesIamRoleStack extends cdk.Stack {
 
     const opsgenieCustomerName = new cdk.CfnParameter(
       this,
-      "sourceEmailAddress",
+      "opsgenieCustomerName",
       {
         type: "String",
         description: `The Opsgenie customer name. The customer name is used to\
@@ -28,7 +28,7 @@ export class AwsSesIamRoleStack extends cdk.Stack {
 
     const opsgenieIntegrationEmailLocalPart = new cdk.CfnParameter(
       this,
-      "opsgenieEmailLocalPart",
+      "opsgenieIntegrationEmailLocalPart",
       {
         type: "String",
         description: `The e-mail local part name, defined in the Opsgenie e-mail\
@@ -38,7 +38,7 @@ export class AwsSesIamRoleStack extends cdk.Stack {
 
     const sourceEmailAddress = new cdk.CfnParameter(
       this,
-      "opsgenieIntegrationName",
+      "sourceEmailAddress",
       {
         type: "String",
         description: `The e-mail address of the source system that will be\
