@@ -28,5 +28,5 @@ jobs:
           cdk deploy
           --require-approval never
           --parameters sourceEmailAddress=${{ secrets.SOURCE_EMAIL_ADDRESS }}
-          --parameters opsgenieEmailLocalPart=${{ secrets.OPSGENIE_LOCAL_PART }}
-          --parameters opsgenieIntegrationName=${{ secrets.OPSGENIE_INTEGRATION_NAME }}
+          --parameters opsgenieIntegrationEmailLocalPart=${{ secrets.OPSGENIE_LOCAL_PART }}
+          --parameters opsgenieCustomerName=${{ secrets.OPSGENIE_CUSTOMER_NAME }}
