@@ -13,12 +13,12 @@
     "cdk": "cdk"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^1.130.0",
+    "@aws-cdk/assert": "^1.134.0",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.11.6",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",
-    "aws-cdk": "^1.130.0",
+    "aws-cdk": "^1.134.0",
     "eslint": "^8.1.0",
     "eslint-config-import": "^0.13.0",
     "eslint-config-prettier": "^8.3.0",
@@ -34,8 +34,10 @@
     "typescript": "^4.4.4"
   },
   "dependencies": {
-    "@aws-cdk/aws-iam": "^1.130.0",
-    "@aws-cdk/core": "^1.130.0",
+    "@aws-cdk/aws-iam": "^1.134.0",
+    "@aws-cdk/aws-servicecatalog": "^1.134.0",
+    "@aws-cdk/core": "^1.134.0",
+    "@aws-cdk/region-info": "^1.134.0",
     "source-map-support": "^0.5.20"
   },
   "author": "Shahrad Rezaei <shahrad@rezaei.io>",
