@@ -59,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [cdk_synth]
     steps:
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: cdk.out
           path: cdk.out
@@ -73,7 +73,7 @@ jobs:
     needs: [cdk_synth]
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: cdk.out
           path: cdk.out
