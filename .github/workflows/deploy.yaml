@@ -19,7 +19,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ca-central-1
 
-      - uses: actions/setup-node@v2.1.4
+      - uses: actions/setup-node@v3.1.1
         with:
           node-version: 12
       - run: npm install
